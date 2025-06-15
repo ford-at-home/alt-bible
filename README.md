@@ -1,7 +1,5 @@
-<a href="https://www.deepseek.com/">
-  <img alt="DeepSeek" src="https://github.com/deepseek-ai/DeepSeek-V2/blob/main/figures/badge.svg?raw=true" height="28"/>
-</a>
-[![DeepSeek](https://img.shields.io/badge/DeepSeek-AI-blue?logo=https://cdn.jsdelivr.net/gh/lobehub/assets@latest/logos/deepseek/color.svg&logoWidth=20)](https://deepseek.com/)
+<a href="https://www.deepseek.com/"><img alt="Homepage"
+    src="https://github.com/deepseek-ai/DeepSeek-V2/blob/main/figures/badge.svg?raw=true"/></a>
 
 # 🎭 Alt Bible
 
