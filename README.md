@@ -1,5 +1,6 @@
-# alt-bible-backend
-This backend stack supports a creative AI-powered Bible web app that reimagines scripture in the voices of modern personas (e.g., Joe Rogan, Cardi B, Ram Dass, Samuel L. Jackson, Hunter S. Thompson, Maya Angelou). It provides storage, structure, and AI translation logic to generate and serve verse-level scripture, indexed by chapter.
+# 📖 Bible AI Backend
+
+This backend stack supports a creative AI-powered Bible web app that reimagines scripture in the voices of modern personas (e.g., Samuel L. Jackson, Cardi B, Hunter S. Thompson). It provides storage, structure, and AI translation logic to generate and serve verse-level scripture, indexed by chapter.
 
 ---
 
@@ -10,13 +11,14 @@ This backend stack supports a creative AI-powered Bible web app that reimagines 
 - 🔁 Idempotent translation job with checkpointing
 - 🔍 Indexed by `book`, `chapter`, and `verse`, per persona
 - 🗂 Preloaded KJV baseline via one-time loader script
+- ✅ **Translation engine is a one-time job** — once each persona is translated, results are stored permanently
 
 ---
 
 ## 📁 Structure
 
 - `cdk/` – CDK stack for provisioning DynamoDB
-- `translate_bible.py` – Main translation script using Bedrock + DeepSeek
+- `translate_bible.py` – One-time translation script using Bedrock + DeepSeek
 - `download_kjv.py` – Downloads and restructures the KJV into JSON
 - `load_kjv_to_dynamodb.py` – Loads KJV into DynamoDB in proper schema
 - `checkpoint_<persona>.json` – Tracks translation progress for idempotency
@@ -45,7 +47,7 @@ bash
 Copy
 Edit
 python load_kjv_to_dynamodb.py
-4. Translate to Persona Voice
+4. Translate to Persona Voice (One-Time)
 bash
 Copy
 Edit
@@ -61,6 +63,8 @@ Store each verse under:
 pk = persona#samuel_l_jackson
 
 sk = book#Genesis#1#1
+
+⚠️ This job is designed to run once per persona. It stores results in DynamoDB and skips completed chapters using a checkpoint file.
 
 🔧 Configurable
 Supports multiple personas
@@ -79,4 +83,3 @@ Translation uses a cost-effective model (us.deepseek.r1-v1:0)
 Checkpoint files ensure restartability
 
 All verse data stored per persona
-
