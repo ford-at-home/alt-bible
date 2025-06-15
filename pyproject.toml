@@ -1,0 +1,29 @@
+[project]
+name = "holyremix"
+version = "0.1.0"
+description = "AI-powered scripture remixing with persona style transfer."
+authors = [
+  { name = "Your Name", email = "ford@flyingpig.ai" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "B", "UP", "C90", "N", "D", "ANN", "S", "A", "COM", "C4", "DTZ", "EM", "ERA", "EXE", "G", "INP", "ISC", "PIE", "PT", "Q", "RET", "RSE", "RUF", "SIM", "T20", "TID", "TRY", "W", "YTT"]
+ignore = []
+
+[tool.mypy]
+python_version = "3.8"
+ignore_missing_imports = true
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "ruff",
+  "mypy"
+] 

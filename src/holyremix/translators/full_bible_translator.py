@@ -13,7 +13,7 @@ import threading
 
 # Add src to path for imports
 import sys
-sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, 'src/holyremix')
 
 from translators.chapter_translator import ChapterTranslator, VerseByVerseTranslator
 from utils.persona_loader import get_persona

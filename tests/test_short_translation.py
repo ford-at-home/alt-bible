@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 
 # Add src to path
-sys.path.insert(0, 'src')
+sys.path.insert(0, 'src/holyremix')
 
 from translators.chapter_translator import ChapterTranslator
 

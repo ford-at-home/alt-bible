@@ -38,6 +38,48 @@ This document outlines the infrastructure plan for serving pre-generated Bible t
 - **IAM**: Service permissions and access control
 - **WAF**: Web application firewall
 
+## 🗄️ DynamoDB Table Structure
+
+### Table Name: `bible-verses` (or similar)
+
+#### Primary Key Structure:
+- **Partition Key**: `version` (String) - e.g., "NIV", "ESV", "KJV", "joe-rogan", "samuel-l-jackson", etc.
+- **Sort Key**: `book_chapter` (String) - e.g., "Genesis_1", "Matthew_5", etc.
+
+#### Item Structure:
+```json
+{
+  "version": "joe-rogan",
+  "book_chapter": "Genesis_1",
+  "book": "Genesis",
+  "chapter": "1",
+  "verses": {
+    "1": "In the beginning God created the heavens and the earth, man. That's wild.",
+    "2": "Now the earth was formless and empty, dude. You gotta understand...",
+    "3": "And God said, Let there be light, and there was light. Check this out!",
+    // ... all verses for that chapter
+  }
+}
+```
+
+### Why This Structure Works
+
+- **Efficient Queries**: Your Lambda can query exactly one item using `version` and `book_chapter` to get all verses for a chapter
+- **Matches Your API**: Perfectly aligns with your `/api/{version}/{book}/{chapter}` endpoint
+- **Cost Effective**: Single read operation per chapter request
+- **Frontend Compatible**: The `verses` object structure matches exactly what your frontend expects from the `bibleData` structure
+
+## 🎨 Frontend Integration Needed
+
+You'll need to modify your app to:
+
+- **Replace static imports**: Replace the static `bibleData` import with API calls to your Lambda
+- **Add loading states**: Show loading indicators while fetching chapter data
+- **Handle async nature**: Manage the asynchronous data fetching (probably in your `useBibleApp` hook)
+- **Implement caching**: Cache fetched chapters to avoid repeated API calls
+
+The current frontend structure with testaments, books, and chapters will work perfectly - you'll just need to fetch the actual verse data when a chapter is selected rather than reading from the static data file.
+
 ## 🚀 Deployment Options
 
 ### Option A: Serverless (Recommended)
@@ -65,8 +107,8 @@ API Gateway → Lambda (cached) → ECS (heavy processing) → DynamoDB
 
 ### Core Endpoints
 ```
-GET /api/v1/translations/{persona}/{book}/{chapter}
-GET /api/v1/translations/{persona}/{book}/{chapter}/{verse}
+GET /api/v1/translations/{version}/{book}/{chapter}
+GET /api/v1/translations/{version}/{book}/{chapter}/{verse}
 GET /api/v1/personas
 GET /api/v1/books
 GET /api/v1/health
@@ -75,18 +117,18 @@ GET /api/v1/health
 ### Example Requests
 ```bash
 # Get Genesis 1 in Samuel L. Jackson's voice
-curl "https://api.altbible.com/v1/translations/samuel_l_jackson/Genesis/1"
+curl "https://api.holyremix.com/v1/translations/samuel-l-jackson/Genesis/1"
 
 # Get specific verse
-curl "https://api.altbible.com/v1/translations/joe_rogan/John/3/16"
+curl "https://api.holyremix.com/v1/translations/joe-rogan/John/3/16"
 
 # List available personas
-curl "https://api.altbible.com/v1/personas"
+curl "https://api.holyremix.com/v1/personas"
 ```
 
-## 💾 Data Schema
+## 💾 Legacy Data Schema (For Reference)
 
-### DynamoDB Table: `BibleTranslations`
+### Previous DynamoDB Table: `BibleTranslations`
 ```json
 {
   "pk": "persona#samuel_l_jackson",

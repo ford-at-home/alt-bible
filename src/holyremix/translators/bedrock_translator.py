@@ -286,7 +286,7 @@ def main():
     parser.add_argument("--book", help="Specific book to translate (optional)")
     parser.add_argument("--chapter", help="Specific chapter to translate (optional)")
     parser.add_argument("--dry-run", action="store_true", help="Show what would be translated without actually translating")
-    parser.add_argument("--kjv-file", default="kjv_bible.json", help="Path to KJV Bible JSON file")
+    parser.add_argument("--kjv-file", default="data/processed/kjv_bible.json", help="Path to KJV Bible JSON file")
     
     args = parser.parse_args()
     
@@ -296,7 +296,7 @@ def main():
             kjv_data = json.load(f)
     except FileNotFoundError:
         print(f"❌ KJV file not found: {args.kjv_file}")
-        print("💡 Run kjv_preprocessor.py first to download and structure the KJV data")
+        print("💡 Run scripts/kjv_preprocessor.py first to download and structure the KJV data")
         sys.exit(1)
     
     # Initialize translator

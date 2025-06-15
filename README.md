@@ -13,6 +13,21 @@
 
 ---
 
+## 🏗️ Project Structure
+
+**This repository contains the backend stack for HOLY REMIX:**
+
+- **Backend API** - AI-powered translation engine and data processing
+- **Infrastructure** - AWS deployment and database management  
+- **Documentation** - Complete project documentation and guides
+
+**Frontend Application:**
+- A separate codebase will be deployed for the web/mobile interface
+- This repo contains all the API documentation and integration details
+- The frontend will consume the APIs deployed from this backend stack
+
+---
+
 ## 🚀 Features
 
 - 🎭 **Persona Remix:** Translate scripture into the style of Joe Rogan, Samuel L. Jackson, Cardi B, and more!
@@ -20,6 +35,7 @@
 - 🔁 **Checkpoint System:** Resume and track progress.
 - 💰 **Cost Estimation:** Know your token spend before you translate.
 - 📦 **Database-Ready Output:** Strict JSON for DynamoDB.
+- 🚀 **Auto-Deployment:** Backend stack deploys automatically via CI/CD.
 
 ---
 
@@ -55,7 +71,7 @@ make install
 | Ram Dass             | Spiritual teacher, psychedelic wisdom    |
 | Ernest Hemingway     | Terse, masculine, minimalist prose       |
 | Slang Spanish        | Urban Latino street culture              |
-| Understated teen     | Ironic GenAlpha talking in no caps       |
+| Moody Gen Alpha Teen | Sarcastic, emoji-heavy, TikTok slang     |
 
 ---
 
@@ -70,6 +86,31 @@ make translate-full-bible PERSONA="joe-rogan"
 
 ---
 
+## 🧑‍💻 Development
+
+### Setup
+```bash
+git clone https://github.com/yourusername/holy-remix.git
+cd holy-remix
+python3 -m venv venv
+source venv/bin/activate
+pip install -e .[dev]
+pre-commit install
+```
+
+### Code Quality
+- **Formatting:** [Black](https://black.readthedocs.io/)
+- **Linting:** [Ruff](https://docs.astral.sh/ruff/)
+- **Type Checking:** [mypy](http://mypy-lang.org/)
+- **Pre-commit Hooks:** Automatically run on commit
+
+### Running Tests
+```bash
+pytest
+```
+
+---
+
 ## 📄 License
 
 MIT
@@ -80,4 +121,4 @@ MIT
 
 - Built with [DeepSeek](https://www.deepseek.com/) and [AWS Bedrock](https://aws.amazon.com/bedrock/)
 
---- 
+---

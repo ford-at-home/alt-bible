@@ -11,7 +11,7 @@ import os
 os.environ['AWS_PROFILE'] = 'personal'
 
 # Add src to path
-sys.path.insert(0, 'src')
+sys.path.insert(0, 'src/holyremix')
 
 from translators.chapter_translator import ChapterTranslator
 
@@ -19,7 +19,7 @@ def test_strict_json_translation(persona: str, intensity: str = "nuclear"):
     """Test strict JSON translation with validation."""
     
     # Load Bible data
-    with open('data/processed/kjv_bible.json', 'r') as f:
+    with open('tests/fixtures/kjv_bible.json', 'r') as f:
         data = json.load(f)
     
     # Take first 3 verses of Genesis 1 for testing

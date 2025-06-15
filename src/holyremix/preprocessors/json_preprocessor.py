@@ -186,7 +186,7 @@ def restructure_kjv_data(raw_data: Dict[str, Any]) -> Dict[str, Any]:
     return restructured
 
 
-def save_restructured_data(data: Dict[str, Any], output_file: str = "kjv_bible.json") -> None:
+def save_restructured_data(data: Dict[str, Any], output_file: str = "tests/fixtures/kjv_bible.json") -> None:
     """
     Save restructured data to JSON file.
     
@@ -256,7 +256,7 @@ def main():
     save_restructured_data(restructured_data)
     
     print("\n🎉 KJV preprocessing complete!")
-    print("📁 Output file: kjv_bible.json")
+    print("�� Output file: tests/fixtures/kjv_bible.json")
     print("🚀 Ready for AI translation!")
 
 

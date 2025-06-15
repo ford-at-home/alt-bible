@@ -1,1 +1,0 @@
-        description="🎭 HOLY REMIX - AI-Powered Scripture Translation", 

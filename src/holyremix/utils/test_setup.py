@@ -135,7 +135,7 @@ def test_data_structure():
     
     try:
         # Check if processed data exists
-        data_file = Path("data/processed/kjv_bible.json")
+        data_file = Path("tests/fixtures/kjv_bible.json")
         if not data_file.exists():
             print("⚠️  No processed data found, skipping structure test")
             return True

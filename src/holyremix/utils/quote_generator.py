@@ -227,7 +227,7 @@ def main():
     parser.add_argument("--book", help="Specific book to quote (optional)")
     parser.add_argument("--chapter", help="Specific chapter to quote (optional)")
     parser.add_argument("--markup", type=float, default=20.0, help="Markup percentage (default: 20)")
-    parser.add_argument("--kjv-file", default="kjv_bible.json", help="Path to KJV Bible JSON file")
+    parser.add_argument("--kjv-file", default="data/processed/kjv_bible.json", help="Path to KJV Bible JSON file")
     parser.add_argument("--save-quote", help="Save quote to JSON file")
     
     args = parser.parse_args()

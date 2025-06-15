@@ -55,11 +55,11 @@ preprocess: install
 		$(PYTHON_VENV) scripts/preprocess_bible.py data/input/kjv.json --output data/processed/kjv_bible.json; \
 	else \
 		echo "📖 No input files found, using sample data..."; \
-		$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src'); from preprocessors.json_preprocessor import main; main()"; \
+		$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src/holyremix'); from preprocessors.json_preprocessor import main; main()"; \
 	fi
 
 test: install
-	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src'); from utils.test_setup import main; main()"
+	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src/holyremix'); from utils.test_setup import main; main()"
 
 run-tests: install
 	@echo "🧪 Running all tests..."
@@ -77,28 +77,28 @@ estimate-full-bible: install
 		echo "Error: PERSONA is required. Usage: make estimate-full-bible PERSONA=joe-rogan"; \
 		exit 1; \
 	fi
-	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src'); from translators.full_bible_translator import FullBibleTranslator; translator = FullBibleTranslator('$(PERSONA)'); translator.estimate_cost()"
+	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src/holyremix'); from translators.full_bible_translator import FullBibleTranslator; translator = FullBibleTranslator('$(PERSONA)'); translator.estimate_cost()"
 
 translate-full-bible: install
 	@if [ -z "$(PERSONA)" ]; then \
 		echo "Error: PERSONA is required. Usage: make translate-full-bible PERSONA=joe-rogan"; \
 		exit 1; \
 	fi
-	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src'); from translators.full_bible_translator import FullBibleTranslator; translator = FullBibleTranslator('$(PERSONA)'); translator.translate_full_bible()"
+	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src/holyremix'); from translators.full_bible_translator import FullBibleTranslator; translator = FullBibleTranslator('$(PERSONA)'); translator.translate_full_bible()"
 
 translate-chapter: install
 	@if [ -z "$(PERSONA)" ]; then \
 		echo "Error: PERSONA is required. Usage: make translate-chapter PERSONA=joe-rogan BOOK=Genesis CHAPTER=1"; \
 		exit 1; \
 	fi
-	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src'); from translators.chapter_translator import ChapterTranslator; translator = ChapterTranslator('$(PERSONA)'); translator.translate_chapter('$(BOOK)', $(CHAPTER))"
+	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src/holyremix'); from translators.chapter_translator import ChapterTranslator; translator = ChapterTranslator('$(PERSONA)'); translator.translate_chapter('$(BOOK)', $(CHAPTER))"
 
 test-translation: install
 	@if [ -z "$(PERSONA)" ]; then \
 		echo "Error: PERSONA is required. Usage: make test-translation PERSONA=joe-rogan"; \
 		exit 1; \
 	fi
-	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src'); import json; from translators.chapter_translator import ChapterTranslator; bible_data = json.load(open('data/processed/kjv_bible.json')); verses = bible_data['Genesis']['1']; translator = ChapterTranslator(); result = translator.translate_chapter('Genesis', '1', verses, '$(PERSONA)'); print('Translation result:', result)"
+	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src/holyremix'); import json; from translators.chapter_translator import ChapterTranslator; bible_data = json.load(open('data/processed/kjv_bible.json')); verses = bible_data['Genesis']['1']; translator = ChapterTranslator(); result = translator.translate_chapter('Genesis', '1', verses, '$(PERSONA)'); print('Translation result:', result)"
 
 # Legacy commands (deprecated but kept for backward compatibility)
 quote: install
@@ -106,7 +106,7 @@ quote: install
 		echo "Error: PERSONA is required. Usage: make quote PERSONA=joe_rogan"; \
 		exit 1; \
 	fi
-	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src'); from utils.quote_generator import main; import sys; sys.argv = ['quote_generator.py', '--persona', '$(PERSONA)']; main()"
+	$(PYTHON_VENV) -c "import sys; sys.path.insert(0, 'src/holyremix'); from utils.quote_generator import main; import sys; sys.argv = ['quote_generator.py', '--persona', '$(PERSONA)']; main()"
 
 translate: install
 	@if [ -z "$(PERSONA)" ]; then \

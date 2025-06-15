@@ -109,7 +109,7 @@ def parse_text_bible(file_path: str) -> Dict[str, Any]:
     return restructured
 
 
-def save_restructured_data(data: Dict[str, Any], output_file: str = "kjv_bible.json") -> None:
+def save_restructured_data(data: Dict[str, Any], output_file: str = "tests/fixtures/kjv_bible.json") -> None:
     """
     Save restructured data to JSON file.
     
@@ -166,7 +166,7 @@ def main():
     
     parser = argparse.ArgumentParser(description="Text Bible Preprocessor")
     parser.add_argument("input_file", help="Path to the text Bible file")
-    parser.add_argument("--output", default="kjv_bible.json", help="Output JSON file path")
+    parser.add_argument("--output", default="tests/fixtures/kjv_bible.json", help="Output JSON file path")
     
     args = parser.parse_args()
     

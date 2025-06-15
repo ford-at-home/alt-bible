@@ -12,7 +12,7 @@ from typing import Dict, Any, List, Optional, Tuple
 
 # Add src to path for imports
 import sys
-sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, 'src/holyremix')
 
 from utils.prompt_templates import get_strict_json_prompt
 from utils.schema_validator import BibleTranslationValidator
