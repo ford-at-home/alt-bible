@@ -1,4 +1,4 @@
-# Alt Bible Makefile
+# HOLY REMIX Makefile
 
 PYTHON=python3
 VENV=venv
@@ -11,7 +11,7 @@ KJV_FILE=data/processed/kjv_bible.json
 .PHONY: help venv install preprocess test list-personas estimate-full-bible translate-full-bible translate-chapter clean test-translation run-tests
 
 help:
-	@echo "🎭 Alt Bible - AI-Powered Scripture Reimagined"
+	@echo "🎭 HOLY REMIX - AI-Powered Scripture Reimagined"
 	@echo ""
 	@echo "Available commands:"
 	@echo "  make venv                    Create virtual environment"

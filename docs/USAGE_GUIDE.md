@@ -1,4 +1,4 @@
-# Alt Bible Usage Guide
+# HOLY REMIX Usage Guide
 
 ## 🚀 Quick Start
 
@@ -6,7 +6,7 @@
 ```bash
 # Clone and install
 git clone <repository>
-cd alt-bible
+cd holy-remix
 make install
 
 # Configure AWS

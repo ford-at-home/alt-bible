@@ -1,4 +1,4 @@
-# 🎭 Alt Bible
+# 🎭 HOLY REMIX
 
 > **AI-Powered Scripture Reimagined** - Transform biblical text into the voices of modern personas using advanced AI translation with hardcore style transfer.
 
@@ -10,7 +10,7 @@
 
 ## 🌟 Overview
 
-Alt Bible is a creative AI-powered application that reimagines scripture in the voices of modern personas using **hardcore style transfer**. Using Amazon Bedrock and DeepSeek AI, it translates biblical chapters into unique character voices with full persona infusion:
+HOLY REMIX is a creative AI-powered application that reimagines scripture in the voices of modern personas using **hardcore style transfer**. Using Amazon Bedrock and DeepSeek AI, it translates biblical chapters into unique character voices with full persona infusion:
 
 ### 🎭 Available Personas
 - **Joe Rogan** - Podcast host energy with "bro science" vibes
@@ -60,8 +60,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone and Setup
 
 ```bash
-git clone https://github.com/yourusername/alt-bible.git
-cd alt-bible
+git clone https://github.com/yourusername/holy-remix.git
+cd holy-remix
 make install
 ```
 
@@ -224,7 +224,7 @@ Each persona includes:
 ## 📁 Project Structure
 
 ```
-alt-bible/
+holy-remix/
 ├── src/                    # Source code modules
 │   ├── preprocessors/      # Bible data preprocessing
 │   │   ├── json_preprocessor.py

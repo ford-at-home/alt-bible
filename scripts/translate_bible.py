@@ -131,7 +131,7 @@ def create_persona_prompt(persona: str, book: str, chapter: str, verses: dict) -
 def main():
     """Main function to orchestrate the Bible translation process."""
     parser = argparse.ArgumentParser(
-        description="🎭 Alt Bible - AI-Powered Scripture Translation",
+        description="🎭 HOLY REMIX - AI-Powered Scripture Translation",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -223,7 +223,7 @@ Examples:
                 prompt = create_persona_prompt(args.persona, args.book, args.chapter, verses)
                 print(prompt)
             else:
-                print(f"�� Translating {args.book} {args.chapter} as {persona_info['display_name']}")
+                print(f"🎭 Translating {args.book} {args.chapter} as {persona_info['display_name']}")
                 print(f"📝 Style: {persona_info['style']}")
                 print("=" * 60)
                 

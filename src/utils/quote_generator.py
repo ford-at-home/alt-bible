@@ -198,7 +198,7 @@ def format_currency(amount: float) -> str:
 def print_quote(quote: Dict[str, Any]) -> None:
     """Print a formatted quote."""
     print("\n" + "=" * 60)
-    print("🎭 ALT BIBLE - TRANSLATION QUOTE")
+    print("🎭 HOLY REMIX - TRANSLATION QUOTE")
     print("=" * 60)
     print(f"Quote ID: {quote['quote_id']}")
     print(f"Persona: {quote['persona']}")

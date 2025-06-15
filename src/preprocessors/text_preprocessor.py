@@ -170,7 +170,7 @@ def main():
     
     args = parser.parse_args()
     
-    print("🎭 Alt Bible - Text Bible Preprocessor")
+    print("🎭 HOLY REMIX - Text Bible Preprocessor")
     print("=" * 40)
     
     # Parse the text Bible file

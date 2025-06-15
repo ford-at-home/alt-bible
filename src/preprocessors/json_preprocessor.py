@@ -239,7 +239,7 @@ def validate_restructured_data(data: Dict[str, Any]) -> None:
 
 def main():
     """Main function to orchestrate the KJV preprocessing."""
-    print("🎭 Alt Bible - KJV Preprocessor")
+    print("🎭 HOLY REMIX - KJV Preprocessor")
     print("=" * 40)
     
     # Download raw data

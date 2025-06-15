@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test suite for Alt Bible project
+Test suite for HOLY REMIX project
 
 Tests the preprocessing, translation, and storage components.
 """
@@ -167,7 +167,7 @@ def test_data_structure():
 
 def main():
     """Run all tests."""
-    print("🚀 Running Alt Bible test suite...")
+    print("🚀 Running HOLY REMIX test suite...")
     print("=" * 50)
     
     tests = [

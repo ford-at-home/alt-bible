@@ -198,7 +198,7 @@ def main():
     
     args = parser.parse_args()
     
-    print("🎭 Alt Bible - DynamoDB Loader")
+    print("🎭 HOLY REMIX - DynamoDB Loader")
     print("=" * 40)
     
     # Load Bible data

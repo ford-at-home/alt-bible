@@ -1,4 +1,25 @@
-# Alt Bible Makefile
+# HOLY REMIX Makefile
+
+# Configuration
+PYTHON = python3
+PIP = pip3
+AWS_CLI = aws
+
+# Default target
+.PHONY: help
+help:
+	@echo "🎭 HOLY REMIX - AI-Powered Scripture Reimagined"
+	@echo ""
+	@echo "Available commands:"
+	@echo "  make install          - Install dependencies"
+	@echo "  make preprocess       - Preprocess Bible data"
+	@echo "  make list-personas    - List available personas"
+	@echo "  make estimate-full-bible PERSONA=<name> - Estimate translation cost"
+	@echo "  make translate-full-bible PERSONA=<name> - Translate entire Bible"
+	@echo "  make translate-chapter BOOK=<name> CHAPTER=<num> PERSONA=<name> - Translate single chapter"
+	@echo "  make test-translation PERSONA=<name> - Test translation with sample"
+	@echo "  make clean            - Clean up generated files"
+	@echo "  make help             - Show this help message"
 
 PYTHON=python3
 VENV=venv
@@ -9,34 +30,6 @@ CHAPTER?=1
 KJV_FILE=data/processed/kjv_bible.json
 
 .PHONY: help venv install preprocess test list-personas estimate-full-bible translate-full-bible translate-chapter clean test-translation run-tests standard-bible
-
-help:
-	@echo "🎭 Alt Bible - AI-Powered Scripture Reimagined"
-	@echo ""
-	@echo "Available commands:"
-	@echo "  make venv                    Create virtual environment"
-	@echo "  make install                 Install Python dependencies"
-	@echo "  make standard-bible          Download standard BBE.json Bible file"	@echo "  make preprocess              Preprocess Bible data (looks for data/input/*.json)"
-	@echo "  make test                    Run setup and integration tests"
-	@echo "  make run-tests               Run all test files in tests/ directory"
-	@echo "  make list-personas           List available personas with descriptions"
-	@echo ""
-	@echo "Translation Commands:"
-	@echo "  make estimate-full-bible     Estimate cost for full Bible translation (PERSONA=...) [REQUIRED]"
-	@echo "  make translate-full-bible    Translate entire Bible with hardcore style transfer (PERSONA=...) [REQUIRED]"
-	@echo "  make translate-chapter       Translate single chapter (PERSONA=..., BOOK=..., CHAPTER=...) [PERSONA REQUIRED]"
-	@echo "  make test-translation        Test translation with small sample (PERSONA=...) [REQUIRED]"
-	@echo ""
-	@echo "Legacy Commands (deprecated):"
-	@echo "  make quote                   Generate cost quote for a persona (PERSONA=...) [REQUIRED]"
-	@echo "  make translate               Translate the whole Bible for a persona (PERSONA=...) [REQUIRED]"
-	@echo "  make dry-run                 Show the prompt for a persona (PERSONA=...) [REQUIRED]"
-	@echo "  make chapter                 Translate a specific chapter (PERSONA=..., BOOK=..., CHAPTER=...) [PERSONA REQUIRED]"
-	@echo "  make chapter-estimate        Estimate cost for chapter translation (PERSONA=...) [REQUIRED]"
-	@echo "  make chapter-translate       Translate chapters with intelligent token management (PERSONA=...) [REQUIRED]"
-	@echo ""
-	@echo "Utility Commands:"
-	@echo "  make clean                   Remove generated files (checkpoints, outputs, venv)"
 
 venv:
 	$(PYTHON) -m venv $(VENV)
