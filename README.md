@@ -1,3 +1,8 @@
+<a href="https://www.deepseek.com/">
+  <img alt="DeepSeek" src="https://github.com/deepseek-ai/DeepSeek-V2/blob/main/figures/badge.svg?raw=true" height="28"/>
+</a>
+[![DeepSeek](https://img.shields.io/badge/DeepSeek-AI-blue?logo=https://cdn.jsdelivr.net/gh/lobehub/assets@latest/logos/deepseek/color.svg&logoWidth=20)](https://deepseek.com/)
+
 # 🎭 Alt Bible
 
 > **AI-Powered Scripture Reimagined** - Transform biblical text into the voices of modern personas using advanced AI translation with hardcore style transfer.
@@ -5,7 +10,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![AWS Bedrock](https://img.shields.io/badge/AWS-Bedrock-orange.svg)](https://aws.amazon.com/bedrock/)
-[![DeepSeek](https://img.shields.io/badge/DeepSeek-AI-purple.svg)](https://deepseek.com/)
 
 ## 🌟 Overview
 
