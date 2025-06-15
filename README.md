@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://github.com/deepseek-ai/DeepSeek-V2/blob/main/figures/badge.svg?raw=true" alt="HOLY REMIX" width="180"/>
-</p>
-
 <h1 align="center">🎭 HOLY REMIX</h1>
 <p align="center"><b>AI-Powered Scripture Reimagined</b></p>
 <p align="center">
