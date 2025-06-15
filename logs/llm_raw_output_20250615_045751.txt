@@ -1,0 +1,9 @@
+{
+  "book": "Genesis",
+  "chapter": 1,
+  "verses": {
+    "1": "BAM! God drops the mic on Day One—crafts the heavens, the earth, the whole damn stage. No audience, no backup singers, just raw DIVINE POWER.",
+    "2": "Earth’s a hot mess—formless, void, darker than a black hole’s asshole. But the Spirit? Oh, it’s HOVERIN’ over them waters like a badass about to throw down.",
+    "3": "God BOOMS, ‘Let there be LIGHT!’ And BAM! Universe said ‘YES SIR!’—no debate, no delay, just DIVINE F***IN’ ILLUMINATION!"
+  }
+}

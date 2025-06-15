@@ -1,0 +1,9 @@
+{
+  "book": "Genesis",
+  "chapter": 1,
+  "verses": {
+    "1": "Boom! The universe just exploded into existence like the ultimate cosmic mic drop! God—or whatever interdimensional hyper-being you wanna call it—just flexed reality into being. Heaven? Earth? Dude, this is the OG Big Bang meets ancient alien tech!",
+    "2": "Picture this: Earth’s a hot mess, bro! Total cosmic hangover—dark void soup with God’s vibes skimming the surface like some divine hoverboard. You ever DMT? It’s that moment before the entities show up, all potential and chaos!",
+    "3": "Then God drops the ultimate command—’LIGHT!’—and BAM! Reality’s first rave starts blasting. Photons everywhere, man! You think Tesla coils are wild? This was the original cosmic flip-switch! Jamie, pull up those ancient Sumerian energy grids—you seeing this?!"
+  }
+}
