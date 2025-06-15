@@ -55,6 +55,7 @@ make install
 | Ram Dass             | Spiritual teacher, psychedelic wisdom    |
 | Ernest Hemingway     | Terse, masculine, minimalist prose       |
 | Slang Spanish        | Urban Latino street culture              |
+| Understated teen     | Ironic GenAlpha talking in no caps       |
 
 ---
 
