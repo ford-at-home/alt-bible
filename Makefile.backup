@@ -8,7 +8,7 @@ BOOK?=Genesis
 CHAPTER?=1
 KJV_FILE=data/processed/kjv_bible.json
 
-.PHONY: help venv install preprocess test list-personas estimate-full-bible translate-full-bible translate-chapter clean test-translation run-tests standard-bible
+.PHONY: help venv install preprocess test list-personas estimate-full-bible translate-full-bible translate-chapter clean test-translation run-tests
 
 help:
 	@echo "🎭 Alt Bible - AI-Powered Scripture Reimagined"
@@ -16,7 +16,7 @@ help:
 	@echo "Available commands:"
 	@echo "  make venv                    Create virtual environment"
 	@echo "  make install                 Install Python dependencies"
-	@echo "  make standard-bible          Download standard BBE.json Bible file"	@echo "  make preprocess              Preprocess Bible data (looks for data/input/*.json)"
+	@echo "  make preprocess              Preprocess Bible data (looks for data/input/*.json)"
 	@echo "  make test                    Run setup and integration tests"
 	@echo "  make run-tests               Run all test files in tests/ directory"
 	@echo "  make list-personas           List available personas with descriptions"
@@ -43,12 +43,6 @@ venv:
 	@echo "✅ Virtual environment created. Run 'source venv/bin/activate' to activate."
 
 install: venv
-standard-bible:
-	@echo "📥 Downloading standard BBE.json Bible file..."
-	@mkdir -p data/input
-	@curl -L -o data/input/BBE.json https://raw.githubusercontent.com/scrollmapper/bible_databases/refs/heads/master/formats/json/BBE.json
-	@echo "✅ BBE.json downloaded to data/input/BBE.json"
-	@echo "📊 File size: $$(du -h data/input/BBE.json | cut -f1)"
 	$(PIP_VENV) install --upgrade pip
 	$(PIP_VENV) install -r requirements.txt
 	@echo "✅ Dependencies installed in virtual environment."
